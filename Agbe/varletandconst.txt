@@ -1,0 +1,106 @@
+- Var:
+1. Var was introduced in the early version of javscript.
+2. It is funciton scoped, meaning its scope is limited to the function in which it is declared.
+
+Characteristics:
+1. Function scope: If declared within a function, it  is only accessible within that function.
+2. Hoisting: var declarations are hoisted on the top of their enclosing scope, but not the intialisations.
+3. Re-declaration: We canr Redeclare a variable using var within the same scope without any error.
+
+
+const testVar = () =>{
+    console.log(x); // undefined (due to hoisting) Var has not been declared till now, thats why.
+    var x = 10; // Var declared and initialised.
+    console.log(x); // Prints 10
+}
+
+testVar();
+
+var x = 1;
+var x = 2; // Throw's no error
+console.log(x); // Prints 2, since it has been updated in the call stack.
+
+
+- Let: 
+1. Let was introduced in ES6
+2. It is block-scoped, meaning its scope is limited to the block in which it is declared. (enclosed in {})
+
+Characteristics:
+1. Block Scope: Accessible only within the block it is declared in.
+2. Hoisting: let declarations are hoisted to the top of their block, but not initialised. Accessing them before declaration results in a 'Reference Error'.
+3. Temporal Dead Zone (TDZ): The period between entering the block and the 'let' declaration is known as the TDZ During this period, the variable cannot be accessed.
+4. Re-declaration: You cannot redeclare a variable using let within the same scope.
+
+const testLet = () =>{
+    console.log(y); // Reference Error: Cannot access y without declaration.
+    let y = 20;
+    console.log(y); // Prints 20
+}
+
+testLet();
+
+{
+    let y = 1; // Prints 1
+    let y = 2; // Syntax Error: Identifer 'y' has already been declared
+    console.log(y);
+}
+
+{
+    let z = 10; 
+    console.log(z); //Prints 10
+}
+
+console.log(z); // Reference Error: z is not defined.
+
+- Const:
+1. Const was also introduced in ES6.
+2. It is similar to 'Let' in terms of block scope and TDZ, but it created a constant reference.
+
+Characteristics:
+1. Block Scope: Same as 'let', 'const' is block-scoped.
+2. Hoisting: Similar hoistig behavior as 'let'.
+3. Constant Reference: the constant reference to the value cannit be changed. However the value itseld can be mutable if it is an object or array.
+4. Re-declaration: You cannot re-declare a 'const' variable within the same scope.
+5. Initialization: Must be initialused at the time of declaration.
+
+const testConst = () => {
+    const z = 30;
+    z = 40; // Type Error: Assignment to constant variable.
+    console.log(z);
+}
+
+testConst();
+
+{
+    const z = 1;
+    console.log(z);
+    const z = 2; // Syntax Error: Identifier 'z' has already been declared.
+}
+
+const arr = [1, 2, 3];
+arr.push(4); // Allowed
+console.log(arr);
+
+arr = [5, 6]; // Type Error: Assignment to constant variable
+
+
+Comparison and Best Practices:
+Scope - 
+Function Scope: var
+Block Scope: const and let
+
+Hoisting -
+Hoisted but undefined until initialisation: var
+Hoisted but in TDZ until initialisation: const and let
+
+Re-declaration -
+Allowed: var
+Not Allowed: let and const
+
+Use Cases - 
+- var : Generally not very often in modern JS. Use let and const instead.
+- let : Use when you need a variable whose value will change and is confined to a specific block.
+- const :  Use when you want to declare constants or ensure a variable cannot be reassigned.
+
+
+

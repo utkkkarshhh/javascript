@@ -1,0 +1,48 @@
+1. Arithmetic Operators
+- Addition (+)
+- Subtraction (-)
+- Multiplication (*)
+- Division (/)
+- Modulus (%)
+- Increment (++)
+- Decrement (--)
+
+2. Assignment Operators
+- Assignment (=)
+- Addition Assignment (+=)
+- Subtraction Assignment (-=)
+- Multiplication Assignment(*=)
+- Divison Assignment(/=)
+- Modulus Assignment(%=)
+
+
+3. Comparison Operators
+- Equal to (==)
+- Not equal to (!=) 
+- Strict equal to (===) 
+- Strict not equal to (!==)
+- Greater than (>)
+- Greater than or equal to(>=)
+- Lesser than(<)
+- Lesser than or equal to(<=)
+
+4. Logical Operators
+- Logical AND (&&): Return true if both operands are true
+- Logical OR (||): Returns true if one operand is true
+- Logical NOT(!): Returns true if the operand is false
+
+5. Ternary Operators(Conditional)
+- condition ? expression 1 : expression 2;
+Condition is evaluated, if true, expression 1 gets executed. Else expression 2 gets executed.
+
+
+
+== (Loose Equality Operator) v/s === (Strict Equality Operator)
+
+== Makes sure that two values are equal, but does not care about their data type, changes the data type of the different value in case it is not similar to the first and then matches it.
+5 == 5 // Will throw true
+5 == "5" // Will throw true because it will convert the 5 of string into a number and then match it.
+
+=== It makes sure that two values and their data type are equal and same.
+5 === 5 // Will throw true
+5 === "5" // will throw false 

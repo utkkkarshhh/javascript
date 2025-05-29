@@ -1,0 +1,34 @@
+Callbacks:
+
+- Callbacks are functions passed as arguments to other functions and are executed after some operation has been completed.
+They are a way to ensure that certain code doesn’t execute until other code has already finished execution, 
+thus helping to handle asynchronous operations.
+
+function greet(name, callback) {
+  console.log('Hello ' + name);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log('Goodbye!');
+}
+
+greet('Utkarsh', sayGoodbye);
+
+
+Here the `sayGoodbye` function will execute only when greet function has been executed successfully. Which blocks the execution
+of the second function thus achieving asynchronous behavior in JavaScript.
+
+- Callback hell
+But when the codebase is huge and the execution of one function is dependent on another, the program becomes more complex since
+there are a lot of callback functions, one callback in another callback which grows the code horizontally instead of vertically. 
+That mechanism is known as callback hell.  
+
+- Inversion Of Control:
+
+The callback function is passed to another callback, this way we lose the control of our code. We don't know what is happening
+behind the scene and the program becomes very difficult to maintain. That process is called inversion of control.
+
+
+
+

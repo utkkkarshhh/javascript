@@ -1,0 +1,16 @@
+There are two types of data types in JavaScrip. 
+1. Primitive
+2. Non-primitive.
+
+Primitive Types (Value Types):
+- Number: Represents numeric values, including integers and floating-point numbers.
+- String: Represents text, enclosed in single (') or double (") quotes.
+- Boolean: Represents a logical value indicating true or false.
+- undefined: Represents a variable that has been declared but not assigned a value.
+- null: Represents the intentional absence of any object value.
+- Symbol: Represents a unique identifier, introduced in ES6.
+
+Non-primitive Types (Reference Types):
+- Objects: Represents a collection of key-value pairs, where keys are strings (or Symbols) and values can be any JavaScript data type.
+- Functions: Represents reusable blocks of code that can be called.
+- Arrays: Special type of object used to store multiple values in a single variable, accessed with numeric indices.

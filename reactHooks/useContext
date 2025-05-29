@@ -1,0 +1,26 @@
+// Context creation
+const Context = React.createContext({
+    // Initial context value (can be any structure)
+    variable: initialValue,
+    function: (parameters) => { functionBody }
+});
+
+// Provider component
+import React, { useState } from 'react';
+
+const Provider = ({ children }) => {
+    const [state, setState] = useState(initialState); // Manage state here
+    
+    // Variables, state values, and update logic, functions to be used across the app
+
+    return (
+        <Context.Provider value={{ // Provide variables and functions through value prop
+            variableReference: variableValue,
+            functionReference: someFunction
+        }}>
+            {children}
+        </Context.Provider>
+    );
+}
+
+export default Provider;
